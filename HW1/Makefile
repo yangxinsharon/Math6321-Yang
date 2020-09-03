@@ -1,14 +1,20 @@
-# Makefile for prob2.cpp
+# Makefile for prob2&3.cpp
 # MATH 6321 HW 1
 # Sharon Yang
 # SMU Mathematics
 # Fall 2020
 
 # compiler
-CXX = g++
+CC := g++
+LDLIBS := -larmadillo
+
+# makefile
+all: prob3 prob2
+prob3:
+
 
 prob2:
 
 
 clean:
-	$(RM) prob2
+	rm *.o
