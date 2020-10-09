@@ -1,7 +1,7 @@
 // Southern Methodist University -- Math Department
 // Math 6321 -- Fall 2020
 // Homework 3 -- Oct 09
-// Problem 3 -- Implicit Methods
+// Problem 3 -- Simple Implicit Methods
 // Sharon Yang -- xiny@smu.edu
 
 
@@ -93,7 +93,7 @@ int main() {
   GM.newt.tol = 1.e-3;
   GM.newt.maxit = 20;
   GM.newt.show_iterates = false;
-
+  cout << "\nRunning generalized midpoint with theta = 1.0:" << endl;
   // loop over lambda values
   for (int il=0; il<lambdas.n_elem; il++) {
 
@@ -101,38 +101,49 @@ int main() {
     rhs.lambda = lambdas(il);
     Jac.lambda = lambdas(il);
 
+    // storage for errors at each step size
+    vec e(h);
+    e.fill(0.0);
+
     // loop over time step sizes
     for (int ih=0; ih<h.n_elem; ih++) {
 
       // call stepper
-      cout << "\nRunning generalized midpoint with stepsize h = " << h(ih)
-	   << ", lambda = " << lambdas(il) << ":\n";
+      cout << "lambda =  " << lambdas(il) << ", stepsize h = " << h(ih) << ":\n";
       mat Y = GM.Evolve(tspan, h(ih), y0);
 
       // output solution, errors, and overall error
       mat Yerr = abs(Y-Ytrue);
-      /*for (size_t i=0; i<Nout; i++)
-        printf("    y(%.1f) = %9.6f   |error| = %.2e\n",
-               tspan(i), Y(0,i), Yerr(0,i));*/
-      Y.save("Y1.txt", raw_ascii);
+      e(ih) = Yerr.max();
       cout << "  Max error = " << Yerr.max() << endl;
-      cout << "  Total internal steps = " << GM.nsteps << endl;
-      cout << "  Total Newton iterations = " << GM.nnewt << endl;
     }
+
+    mat A(h.n_elem,2);
+    vec b(h.n_elem);
+    for (size_t ih=0; ih<h.n_elem; ih++) {
+      A(ih,0) = log(h(ih));
+      A(ih,1) = 1.0;
+      b(ih)   = log(e(ih));
+    }
+    mat AtA = A.t()*A;
+    vec Atb = A.t()*b;
+    vec s = solve(AtA, Atb);
+    cout << "Overall convergence rate estimate = " << s(0) << endl;
     cout << endl;
   }
 
 
-/*
-  //------ run second test: theta = 0.50 ------
-  double theta = 0.5;
+
+  //------ run second test: theta = 0.5 ------
+  double theta2 = 0.5;
   // create time stepper object
-  GeneralizedMidpoint GM(rhs, Jac, theta, y0);
+  GeneralizedMidpoint GM2(rhs, Jac, theta2, y0);
 
   // update Newton solver parameters
-  GM.newt.tol = 1.e-3;
-  GM.newt.maxit = 20;
-  GM.newt.show_iterates = false;
+  GM2.newt.tol = 1.e-3;
+  GM2.newt.maxit = 20;
+  GM2.newt.show_iterates = false;
+  cout << "\nRunning generalized midpoint with theta = 0.5:" << endl;
   // loop over lambda values
   for (int il=0; il<lambdas.n_elem; il++) {
 
@@ -140,39 +151,49 @@ int main() {
     rhs.lambda = lambdas(il);
     Jac.lambda = lambdas(il);
 
+    // storage for errors at each step size
+    vec e(h);
+    e.fill(0.0);
+
     // loop over time step sizes
     for (int ih=0; ih<h.n_elem; ih++) {
 
       // call stepper
-      cout << "\nRunning generalized midpoint with stepsize h = " << h(ih)
-     << ", lambda = " << lambdas(il) << ":\n";
-      mat Y = GM.Evolve(tspan, h(ih), y0);
+      cout << "lambda =  " << lambdas(il) << ", stepsize h = " << h(ih) << ":\n";
+      mat Y = GM2.Evolve(tspan, h(ih), y0);
 
       // output solution, errors, and overall error
       mat Yerr = abs(Y-Ytrue);
-      for (size_t i=0; i<Nout; i++)
-        printf("    y(%.1f) = %9.6f   |error| = %.2e\n",
-               tspan(i), Y(0,i), Yerr(0,i));
-      Y.save("Y2.txt", raw_ascii);
+      e(ih) = Yerr.max();
       cout << "  Max error = " << Yerr.max() << endl;
-      cout << "  Total internal steps = " << GM.nsteps << endl;
-      cout << "  Total Newton iterations = " << GM.nnewt << endl;
     }
+
+    mat A(h.n_elem,2);
+    vec b(h.n_elem);
+    for (size_t ih=0; ih<h.n_elem; ih++) {
+      A(ih,0) = log(h(ih));
+      A(ih,1) = 1.0;
+      b(ih)   = log(e(ih));
+    }
+    mat AtA = A.t()*A;
+    vec Atb = A.t()*b;
+    vec s = solve(AtA, Atb);
+    cout << "Overall convergence rate estimate = " << s(0) << endl;
     cout << endl;
   }
 
 
 
   //------ run third test: theta = 0.45 ------
-  
-  double theta = 0.45;
+  double theta3 = 0.45;
   // create time stepper object
-  GeneralizedMidpoint GM(rhs, Jac, theta, y0);
+  GeneralizedMidpoint GM3(rhs, Jac, theta3, y0);
 
   // update Newton solver parameters
-  GM.newt.tol = 1.e-3;
-  GM.newt.maxit = 20;
-  GM.newt.show_iterates = false;
+  GM3.newt.tol = 1.e-3;
+  GM3.newt.maxit = 20;
+  GM3.newt.show_iterates = false;
+  cout << "\nRunning generalized midpoint with theta = 0.45:" << endl;
   // loop over lambda values
   for (int il=0; il<lambdas.n_elem; il++) {
 
@@ -180,30 +201,49 @@ int main() {
     rhs.lambda = lambdas(il);
     Jac.lambda = lambdas(il);
 
+    // storage for errors at each step size
+    vec e(h);
+    e.fill(0.0);
+
     // loop over time step sizes
     for (int ih=0; ih<h.n_elem; ih++) {
 
       // call stepper
-      cout << "\nRunning generalized midpoint with stepsize h = " << h(ih)
-     << ", lambda = " << lambdas(il) << ":\n";
-      mat Y = GM.Evolve(tspan, h(ih), y0);
+      cout << "lambda =  " << lambdas(il) << ", stepsize h = " << h(ih) << ":\n";
+      mat Y = GM3.Evolve(tspan, h(ih), y0);
 
       // output solution, errors, and overall error
       mat Yerr = abs(Y-Ytrue);
-      for (size_t i=0; i<Nout; i++)
-        printf("    y(%.1f) = %9.6f   |error| = %.2e\n",
-               tspan(i), Y(0,i), Yerr(0,i));
-      Y.save("Y3.txt", raw_ascii);
+      e(ih) = Yerr.max();
       cout << "  Max error = " << Yerr.max() << endl;
-      cout << "  Total internal steps = " << GM.nsteps << endl;
-      cout << "  Total Newton iterations = " << GM.nnewt << endl;
     }
+
+    mat A(h.n_elem,2);
+    vec b(h.n_elem);
+    for (size_t ih=0; ih<h.n_elem; ih++) {
+      A(ih,0) = log(h(ih));
+      A(ih,1) = 1.0;
+      b(ih)   = log(e(ih));
+    }
+    mat AtA = A.t()*A;
+    vec Atb = A.t()*b;
+    vec s = solve(AtA, Atb);
+    cout << "Overall convergence rate estimate = " << s(0) << endl;
     cout << endl;
   }
 
-*/
 
-
+  printf("It is not always more accurate when the step size gets smaller. "
+    "For the first method theta = 1.0, when the stiffness parameter lambda gets 10 times bigger, "
+    "the max error gets 10 times smaller for each theta. It is asymptotically stable as the "
+    "stability region is less than 1. \n"
+    "For the second method theta = 0.5, the max errors for the same step size are almost the same "
+    "with different lambda. The values of the stability region is close to 1. \n"
+    "For the third method theta = 0.45, the stability region is sometimes greater than 1, "
+    "which leads to unstable status. \n"
+    "Again, it reminds me that the question of stability is orthogonal to the question of accuracy.\n");
+  
+  return 0;
 }
 
 
