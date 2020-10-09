@@ -69,16 +69,9 @@ mat GeneralizedMidpoint::Evolve(vec& tspan, double h, vec y) {
       resid.h    = hcur;   // copy current stepsize into objects
       residJac.h = hcur;
       yold = y;            // copy y into stored yold object
-
-      // update resid.fold vector with f(t,yold)
-      int ierr = frhs->Evaluate(t, y, resid.fold);
-      if (ierr != 0) {
-        std::cerr << "Error in ODE RHS function = " << ierr << "\n";
-        return Y;
-      }
-
+      
       // call Newton method to solve for the updated solution
-      ierr = newt.Solve(y);
+      int ierr = newt.Solve(y);
       if (ierr != 0) {
         std::cerr << "GeneralizedMidpointStepper: Error in Newton solver function = "
                   << ierr << "\n";

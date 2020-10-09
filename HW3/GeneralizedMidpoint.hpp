@@ -24,28 +24,30 @@ public:
   double t;           // current time
   double h;           // current step size
   arma::vec *yold;    // pointer to solution at old time step
-  arma::vec fold;     // storage for f at old solution
   double theta;       // generalized midpoint parameter
+  arma::vec ymid;     // storage for y at generalized midpoint
 
 
   // constructor (sets RHSFunction and old solution pointers)
-  GMResid(RHSFunction& frhs_, arma::vec& yold_) {
-    frhs = &frhs_;  yold = &yold_;
-    fold = arma::vec(yold_);
+  GMResid(RHSFunction& frhs_, arma::vec& yold_, double theta_) {
+    frhs = &frhs_;  
+    yold = &yold_;
+    theta = theta_;
   };
 
   // residual evaluation routine
   int Evaluate(arma::vec& y, arma::vec& resid) {
 
+    ymid = (1-theta)*(*yold) + theta*y;
     // evaluate RHS function (store in resid)
-    int ierr = frhs->Evaluate(t+h, y, resid);
+    int ierr = frhs->Evaluate(t+theta*h, ymid, resid);
     if (ierr != 0) {
       std::cerr << "Error in ODE RHS function = " << ierr << "\n";
       return ierr;
     }
 
     // combine pieces to fill residual, y-yold-h*(f(t+theta*h, (1-theta)*yold + theta*y))
-    resid = y - (*yold) - theta*h*resid - (1.0-theta)*h*fold;
+    resid = y - (*yold) - h*resid;
 
     // return success
     return 0;
@@ -65,15 +67,21 @@ public:
   double t;            // current time
   double h;            // current step size
   double theta;        // generalized midpoint parameter
+  arma::vec *yold;     // pointer to solution at old time step
+  arma::vec ymid;
 
   // constructor (sets RHS Jacobian function pointer)
-  GMResidJac(RHSJacobian &Jrhs_) { Jrhs = &Jrhs_; };
+  GMResidJac(RHSJacobian &Jrhs_, arma::vec& yold_, double theta_) { 
+    Jrhs = &Jrhs_; 
+    yold = &yold_;
+    theta = theta_;
+  };
 
-  // Residual Jacobian evaluation routine
+  // Residual Jacobian evaluation routine 
   int Evaluate(arma::vec& y, arma::mat& J) {
-
+    ymid = (1-theta)*(*yold) + theta*y;
     // evaluate RHS function Jacobian, Jrhs (store in J)
-    int ierr = Jrhs->Evaluate(t+h, y, J);
+    int ierr = Jrhs->Evaluate(t+theta*h, ymid, J);
     if (ierr != 0) {
       std::cerr << "Error in ODE RHS Jacobian function = " << ierr << "\n";
       return ierr;
@@ -143,8 +151,8 @@ public:
     , yold(arma::vec(y))             // clone y to create yold
     , atol(arma::vec(y))             // clone y to create atol
     , w(arma::vec(y))                // clone y to create w
-    , resid(GMResid(frhs_, yold))  // construct nonlinear residual object
-    , residJac(GMResidJac(Jrhs_))  // construct nonlinear Jacobian object
+    , resid(GMResid(frhs_, yold, theta_))  // construct nonlinear residual object
+    , residJac(GMResidJac(Jrhs_, yold, theta_))  // construct nonlinear Jacobian object
     , rtol(1.0e-7)                   // default rtol value
     , nsteps(0)                      // initial counter values
     , nnewt(0)

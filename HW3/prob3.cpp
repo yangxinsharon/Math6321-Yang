@@ -105,15 +105,15 @@ int main() {
     for (int ih=0; ih<h.n_elem; ih++) {
 
       // call stepper
-      cout << "\nRunning backward Euler with stepsize h = " << h(ih)
+      cout << "\nRunning generalized midpoint with stepsize h = " << h(ih)
 	   << ", lambda = " << lambdas(il) << ":\n";
       mat Y = GM.Evolve(tspan, h(ih), y0);
 
       // output solution, errors, and overall error
       mat Yerr = abs(Y-Ytrue);
-      for (size_t i=0; i<Nout; i++)
+      /*for (size_t i=0; i<Nout; i++)
         printf("    y(%.1f) = %9.6f   |error| = %.2e\n",
-               tspan(i), Y(0,i), Yerr(0,i));
+               tspan(i), Y(0,i), Yerr(0,i));*/
       Y.save("Y1.txt", raw_ascii);
       cout << "  Max error = " << Yerr.max() << endl;
       cout << "  Total internal steps = " << GM.nsteps << endl;
@@ -125,7 +125,14 @@ int main() {
 
 /*
   //------ run second test: theta = 0.50 ------
+  double theta = 0.5;
+  // create time stepper object
+  GeneralizedMidpoint GM(rhs, Jac, theta, y0);
 
+  // update Newton solver parameters
+  GM.newt.tol = 1.e-3;
+  GM.newt.maxit = 20;
+  GM.newt.show_iterates = false;
   // loop over lambda values
   for (int il=0; il<lambdas.n_elem; il++) {
 
@@ -137,7 +144,7 @@ int main() {
     for (int ih=0; ih<h.n_elem; ih++) {
 
       // call stepper
-      cout << "\nRunning backward Euler with stepsize h = " << h(ih)
+      cout << "\nRunning generalized midpoint with stepsize h = " << h(ih)
      << ", lambda = " << lambdas(il) << ":\n";
       mat Y = GM.Evolve(tspan, h(ih), y0);
 
@@ -146,7 +153,7 @@ int main() {
       for (size_t i=0; i<Nout; i++)
         printf("    y(%.1f) = %9.6f   |error| = %.2e\n",
                tspan(i), Y(0,i), Yerr(0,i));
-      Y.save("Y1.txt", raw_ascii);
+      Y.save("Y2.txt", raw_ascii);
       cout << "  Max error = " << Yerr.max() << endl;
       cout << "  Total internal steps = " << GM.nsteps << endl;
       cout << "  Total Newton iterations = " << GM.nnewt << endl;
@@ -157,7 +164,15 @@ int main() {
 
 
   //------ run third test: theta = 0.45 ------
+  
+  double theta = 0.45;
+  // create time stepper object
+  GeneralizedMidpoint GM(rhs, Jac, theta, y0);
 
+  // update Newton solver parameters
+  GM.newt.tol = 1.e-3;
+  GM.newt.maxit = 20;
+  GM.newt.show_iterates = false;
   // loop over lambda values
   for (int il=0; il<lambdas.n_elem; il++) {
 
@@ -169,7 +184,7 @@ int main() {
     for (int ih=0; ih<h.n_elem; ih++) {
 
       // call stepper
-      cout << "\nRunning backward Euler with stepsize h = " << h(ih)
+      cout << "\nRunning generalized midpoint with stepsize h = " << h(ih)
      << ", lambda = " << lambdas(il) << ":\n";
       mat Y = GM.Evolve(tspan, h(ih), y0);
 
@@ -178,7 +193,7 @@ int main() {
       for (size_t i=0; i<Nout; i++)
         printf("    y(%.1f) = %9.6f   |error| = %.2e\n",
                tspan(i), Y(0,i), Yerr(0,i));
-      Y.save("Y1.txt", raw_ascii);
+      Y.save("Y3.txt", raw_ascii);
       cout << "  Max error = " << Yerr.max() << endl;
       cout << "  Total internal steps = " << GM.nsteps << endl;
       cout << "  Total Newton iterations = " << GM.nnewt << endl;
