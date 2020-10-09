@@ -1,0 +1,60 @@
+Yang
+
+-------------------------
+
+Notes:
+* Executables (your .exe and .exe.dSYM files and folders) should almost never be
+  added to a Git repository, as these are architecture-dependent (i.e., not portable
+  to other computers) and are frequently much larger in size than the source codes
+  used to generate them.  I've removed them from your repo; you should refrain from
+  adding these in the future.
+
+-------------------------
+
+prob1 results:
+
+* All of your results are excellent, except for your 'overall' convergence rate
+  estimate, which is not quite what I expected.
+
+prob1 codes:
+
+* Everything looks great, except I'm struggling to understand what you were doing
+  in this calculation of the overall convergence rate.  Given a set of experimental
+  data that _should_ adhere to a linear relationship in log-log space, and where you
+  only want the slope of this 'line', the most mathematically accurate thing to do is
+  a linear-least-squares best fit in log-log space.  You did something completely
+  different, overwriting P at each iteration, and just outputting the final value??
+
+* The comment and authorship at the top of your Makefile are inaccurate
+
+
+prob2 results:
+
+* Wow, your prob2.exe prints a lot of extraneous information to stdout.
+
+* Your first 4 plots are excellent, but I get an error message before your prob2_plots.m
+  script can plot the last two:
+
+     Error using importdata (line 139)
+     Unable to open file.
+     Error in prob2_plots (line 61)
+     C = importdata(file2C,delimiterIn,headerlinesIn);
+
+prob2 codes:
+
+* your prob2.cpp can only run ONE of the three required tests.  I explicitly instructed
+  you to write a single main() routine that performed all of the experiments, NOT just
+  one at a time that requires changes, recompiling, and re-running.
+
+* C++ programs should not use global variables (like you do for both alpha and beta)
+
+* Please delete any unused code instead of commenting out (prob2.cpp lines 82-83)
+
+* Your error in prob2_plots.m is on line 58: your file is named '2c_results.txt', but
+  here you wrote '2C_results.txt' -- standard Linux filesystems are case dependent,
+  meaning that capitalization is important.
+
+
+proper submission:  10/10
+prob1 score:        21/25
+prob2 score:        18/36
