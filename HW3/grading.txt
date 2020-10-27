@@ -1,0 +1,18 @@
+Yang
+
+-------------------------
+
+results: excellent
+
+GeneralizedMidpoint.{hpp,cpp}:
+
+* Nice use of ymid to avoid unnecessary creation/destruction of memory on each call to GMResid::Evaluate and GMResidJac::Evaluate
+
+prob3.cpp:
+
+* It would have been cleaner to create a single GeneralizedMidpoint object and just change its value of theta within a loop over the various theta values.  However, the code is correct.
+
+
+Grading:
+* overall: 10/10
+* problem 3: 30/30
