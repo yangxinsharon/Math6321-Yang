@@ -1,0 +1,65 @@
+Yang
+
+-------------------------
+
+Test program results: excellent
+
+Problem 2 results: excellent
+
+adapt_rkf.{hpp,cpp}:
+
+* I like your use of the higher-order result for your
+  time-evolved solution
+
+prob2.cpp:
+
+* You do not need ether f_t(t,y) or f_y(t,y) in this assignment;
+  both should be deleted.
+
+* Otherwise, this is excellent!
+
+Problem 3 results:
+
+* Your code halts with an error when I try to run it:
+
+     $ ./prob3.exe
+
+     Adaptive Runge-Kutta-Fehlberg:
+       rtol = 1e-06
+       atol = 1e-12
+
+     error: Mat::operator(): index out of bounds
+     terminate called after throwing an instance of 'std::logic_error'
+       what():  Mat::operator(): index out of bounds
+     Aborted (core dumped)
+
+* Your plots are good, although these are *not* generated when I run
+  the code; these require your archived versions of the output files.
+
+* While your 'discussion' is correct, you fail to mention anything
+  about the relative costs of AdaptRKF versus RK4 in generating the
+  correct solutions.
+
+
+prob3.cpp:
+
+* The issue is with your definition of 'atol' on line 58:
+
+     vec atol("1.e-12");
+
+  The absolute tolerance vector should be the *same* length as the
+  solution vector.  Thus here it should have 4 components, not one.
+
+  How did you generate the results that you archived in your
+  repository?
+
+prob3_plots:
+
+* Aside from the missing discussion mentioned above, this is good.
+
+
+
+Grading:
+* overall: 10/10
+* problem 2: 39/40
+* problem 3: 12/20
