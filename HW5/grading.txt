@@ -1,0 +1,28 @@
+Yang
+
+-------------------------
+
+Problem 4 results:
+
+* Your plots and table of results are excellent.
+
+* I was hoping for a more thorough 'discussion' of your results,
+  instead of just saying that some methods were "better".  WHY
+  were some methods better?  What do you expect from the long-term
+  behavior of using these methods on Hamiltonian systems?
+
+prob4.cpp:
+
+* Your indentation on lines 192 and 193 is off/confusing.
+
+* Otherwise, this file is excellent.
+
+prob4_plots:
+
+* I had to install the 'prettytable' package to run this -- I like
+  how nicely it puts tables together!
+
+
+Grading:
+* submission/Makefile: 5/5
+* problem 4: 23/25
