@@ -61,5 +61,6 @@ legend([l1,l2,l3],'0.9','0.5','0.1')
 axis([-10 50 -40 40]), axis square, grid on
 title('5.13',FS,16)
 saveas(gcf,'5.13_Method.png')
+disp('The stability regions for three plots are inside of the circles. For backwar Euler method, the stability regions increse with smaller deltas. For trapezoidal method, the stability regions decrese with smaller delta. For 5.13 method, the stability region is largest at delta = 0.5.')
 
-disp('sss')
+
