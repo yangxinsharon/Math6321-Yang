@@ -1,5 +1,6 @@
 % 5.11 b) Problem Statement: Plot the delta-curves for backward Euler,
 % trapezoidal, and (5.13) methods.
+% Sharon Yang HW6
 
 d = [0.9, 0.5, 0.1]; % delta
 C = 'color'; 
