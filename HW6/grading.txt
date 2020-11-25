@@ -1,0 +1,14 @@
+Yang
+
+-------------------------
+
+Problem 3:
+
+* Your stability region boundaries are all perfect.
+
+* Your discussion of the results is very much incorrect.  The shape/size of the boundary is less relevant than the stability _region_ itself; this intimately depends on whether the boundary curve surrounds the _stable_ or _unstable_ regions.  In fact, of these 9 plots, only 4 had shaded region that corresponded to the stable region, while in the other 5 the shaded region was unstable.  To ascertain this, you needed to test some eta value in the plane to see if it satisfied the root condition |r_i| <= delta.
+
+
+Grading:
+* submission: 5/5
+* problem 3: 12/15
