@@ -1,0 +1,154 @@
+(base) xinyang@MacBook-Pro Code % ./BasicTest2.exe
+
+Problem 1 Basic Test from Niegemann:
+
+LSRK12:
+  h = 0.1:  Total error = 35.7483
+  h = 0.09:  Total error = 29.8484
+  h = 0.08:  Total error = 27.9024
+  h = 0.07:  Total error = 27.2109
+  h = 0.06:  Total error = 29.9279
+  h = 0.05:  Total error = 27.1068
+  h = 0.04:  Total error = 23.8404
+  h = 0.03:  Total error = 28.0362
+  h = 0.02:  Total error = 20.1796
+  h = 0.01:  Total error = 14.3193,  conv rate = 0.494937
+  h = 0.009:  Total error = 13.5515
+  h = 0.008:  Total error = 14.0619
+  h = 0.007:  Total error = 10.3057
+  h = 0.006:  Total error = 8.17504
+  h = 0.005:  Total error = 7.1362
+  h = 0.004:  Total error = 5.09382
+  h = 0.003:  Total error = 2.99311
+  h = 0.002:  Total error = 0.00389221
+  h = 0.001:  Total error = 1.71848e-09,  conv rate = 21.111
+  h = 0.0009:  Total error = 2.27138e-10
+  h = 0.0008:  Total error = 1.04209e-10
+  h = 0.0007:  Total error = 1.00736e-10
+  h = 0.0006:  Total error = 1.78353e-11
+  h = 0.0005:  Total error = 1.5667e-11
+  h = 0.0004:  Total error = 3.95605e-12
+  h = 0.0003:  Total error = 5.16035e-13
+  h = 0.0002:  Total error = 7.2338e-14
+  h = 0.0001:  Total error = 1.38362e-14,  conv rate = 2.38631
+
+LSRK13:
+  h = 0.1:  Total error = 8.52856
+  h = 0.09:  Total error = 25.642
+  h = 0.08:  Total error = 13.8395
+  h = 0.07:  Total error = 24.025
+  h = 0.06:  Total error = 23.9139
+  h = 0.05:  Total error = 21.2907
+  h = 0.04:  Total error = 15.6072
+  h = 0.03:  Total error = 17.2889
+  h = 0.02:  Total error = 12.8851
+  h = 0.01:  Total error = 5.37802,  conv rate = 1.26056
+  h = 0.009:  Total error = 5.05136
+  h = 0.008:  Total error = 4.1082
+  h = 0.007:  Total error = 0.407673
+  h = 0.006:  Total error = 1.47459
+  h = 0.005:  Total error = 0.0160344
+  h = 0.004:  Total error = 1.60993e-09
+  h = 0.003:  Total error = 9.44842e-10
+  h = 0.002:  Total error = 3.84286e-09
+  h = 0.001:  Total error = 2.02493e-10,  conv rate = 4.24624
+  h = 0.0009:  Total error = 5.09655e-11
+  h = 0.0008:  Total error = 2.45833e-11
+  h = 0.0007:  Total error = 2.94981e-11
+  h = 0.0006:  Total error = 8.08428e-12
+  h = 0.0005:  Total error = 8.41873e-12
+  h = 0.0004:  Total error = 3.02095e-12
+  h = 0.0003:  Total error = 6.05002e-13
+  h = 0.0002:  Total error = 1.36724e-13
+  h = 0.0001:  Total error = 1.84054e-14,  conv rate = 2.89306
+
+LSRK14:
+  h = 0.1:  Total error = 13.7567
+  h = 0.09:  Total error = 13.7785
+  h = 0.08:  Total error = 8.65021
+  h = 0.07:  Total error = 18.7034
+  h = 0.06:  Total error = 15.9308
+  h = 0.05:  Total error = 17.5651
+  h = 0.04:  Total error = 18.2136
+  h = 0.03:  Total error = 10.5439
+  h = 0.02:  Total error = 11.6561
+  h = 0.01:  Total error = 0.221721,  conv rate = 5.7162
+  h = 0.009:  Total error = 73.85
+  h = 0.008:  Total error = 0.00579948
+  h = 0.007:  Total error = 1.63143e-07
+  h = 0.006:  Total error = 1.4279e-08
+  h = 0.005:  Total error = 1.50494e-08
+  h = 0.004:  Total error = 2.37704e-09
+  h = 0.003:  Total error = 5.13242e-10
+  h = 0.002:  Total error = 1.8889e-09
+  h = 0.001:  Total error = 1.84081e-10,  conv rate = 3.35914
+  h = 0.0009:  Total error = 5.62779e-11
+  h = 0.0008:  Total error = 2.7249e-11
+  h = 0.0007:  Total error = 3.4407e-11
+  h = 0.0006:  Total error = 1.10469e-11
+  h = 0.0005:  Total error = 1.20711e-11
+  h = 0.0004:  Total error = 4.88985e-12
+  h = 0.0003:  Total error = 1.13261e-12
+  h = 0.0002:  Total error = 3.01596e-13
+  h = 0.0001:  Total error = 3.02536e-14,  conv rate = 3.31744
+
+ERK4:
+  h = 0.1:  Total error = 41.8327
+  h = 0.09:  Total error = 35.7264
+  h = 0.08:  Total error = 47.6829
+  h = 0.07:  Total error = 29.0365
+  h = 0.06:  Total error = 32.4664
+  h = 0.05:  Total error = 33.7756
+  h = 0.04:  Total error = 28.9669
+  h = 0.03:  Total error = 28.7722
+  h = 0.02:  Total error = 26.4269
+  h = 0.01:  Total error = 18.8959,  conv rate = 0.483934
+  h = 0.009:  Total error = 19.0826
+  h = 0.008:  Total error = 18.6681
+  h = 0.007:  Total error = 16.3265
+  h = 0.006:  Total error = 13.405
+  h = 0.005:  Total error = 11.0822
+  h = 0.004:  Total error = 10.2104
+  h = 0.003:  Total error = 8.23746
+  h = 0.002:  Total error = 3.93464
+  h = 0.001:  Total error = 2.62512e-06,  conv rate = 20.5154
+  h = 0.0009:  Total error = 7.30916e-08
+  h = 0.0008:  Total error = 1.59266e-08
+  h = 0.0007:  Total error = 1.37014e-08
+  h = 0.0006:  Total error = 3.16049e-09
+  h = 0.0005:  Total error = 3.04778e-09
+  h = 0.0004:  Total error = 1.06787e-09
+  h = 0.0003:  Total error = 2.18326e-10
+  h = 0.0002:  Total error = 5.05983e-11
+  h = 0.0001:  Total error = 2.74047e-12,  conv rate = 4.2066
+
+FE:
+  h = 0.1:  Total error = 17.4209
+  h = 0.09:  Total error = 18.2702
+  h = 0.08:  Total error = 14.9529
+  h = 0.07:  Total error = 18.3833
+  h = 0.06:  Total error = 63.9435
+  h = 0.05:  Total error = 13.6471
+  h = 0.04:  Total error = 20.4843
+  h = 0.03:  Total error = 20.4477
+  h = 0.02:  Total error = 20.656
+  h = 0.01:  Total error = 12.7756,  conv rate = 0.693175
+  h = 0.009:  Total error = 21.2194
+  h = 0.008:  Total error = 13.8579
+  h = 0.007:  Total error = 12.9927
+  h = 0.006:  Total error = 13.5911
+  h = 0.005:  Total error = 5.52008
+  h = 0.004:  Total error = 7.70033
+  h = 0.003:  Total error = 17.5731
+  h = 0.002:  Total error = 3.07205
+  h = 0.001:  Total error = 7.30018e-05,  conv rate = 15.3609
+  h = 0.0009:  Total error = 6.56409e-05
+  h = 0.0008:  Total error = 5.83314e-05
+  h = 0.0007:  Total error = 5.1076e-05
+  h = 0.0006:  Total error = 4.37665e-05
+  h = 0.0005:  Total error = 3.6502e-05
+  h = 0.0004:  Total error = 2.92016e-05
+  h = 0.0003:  Total error = 2.18922e-05
+  h = 0.0002:  Total error = 1.46008e-05
+  h = 0.0001:  Total error = 7.30038e-06,  conv rate = 1
+(base) xinyang@MacBook-Pro Code % 

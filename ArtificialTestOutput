@@ -1,0 +1,149 @@
+(base) xinyang@MacBook-Pro Code % ./ArtificialTest.exe
+
+Problem 2 Artificial Problem from Cash:
+
+LSRK12:
+  lambda = 100:
+  h = 0.1:  Max error = 1.13693e+301
+  h = 0.05:  Max error = 7.8669e+237,  conv rate = 209.813
+  h = 0.04:  Max error = 0.000288811,  conv rate = 2491.33
+  h = 0.03:  Max error = 9.54078e-07,  conv rate = 19.858
+  h = 0.02:  Max error = 1.42895e-07,  conv rate = 4.68262
+  h = 0.01:  Max error = 1.98031e-09,  conv rate = 6.17308
+  h = 0.005:  Max error = 3.71747e-11,  conv rate = 5.73526
+  h = 0.001:  Max error = 2.16493e-15,  conv rate = 6.05863
+  lambda = 200:
+  h = 0.1:  Max error = 1.81782e+304
+  h = 0.05:  Max error = 2.83886e+300,  conv rate = 12.6446
+  h = 0.04:  Max error = 1.54725e+268,  conv rate = 332.923
+  h = 0.03:  Max error = 5.53911e+299,  conv rate = -252.555
+  h = 0.02:  Max error = 7.35413e-05,  conv rate = 1725.68
+  h = 0.01:  Max error = 3.46821e-08,  conv rate = 11.0501
+  h = 0.005:  Max error = 4.75235e-10,  conv rate = 6.18941
+  h = 0.001:  Max error = 4.20219e-14,  conv rate = 5.79915
+  lambda = 400:
+  h = 0.1:  Max error = 2.30003e+285
+  h = 0.05:  Max error = 7.96699e+241,  conv rate = 144.372
+  h = 0.04:  Max error = 2.36115e+250,  conv rate = -87.4196
+  h = 0.03:  Max error = 3.53405e+246,  conv rate = 30.6138
+  h = 0.02:  Max error = 1.02727e+213,  conv rate = 190.45
+  h = 0.01:  Max error = 1.64777e-05,  conv rate = 723.499
+  h = 0.005:  Max error = 8.54268e-09,  conv rate = 10.9135
+  h = 0.001:  Max error = 5.82256e-13,  conv rate = 5.96088
+
+LSRK13:
+  lambda = 100:
+  h = 0.1:  Max error = 9.81392e-06
+  h = 0.05:  Max error = 2.68828e-06,  conv rate = 1.86815
+  h = 0.04:  Max error = 1.03734e-06,  conv rate = 4.26739
+  h = 0.03:  Max error = 1.0893e-07,  conv rate = 7.83403
+  h = 0.02:  Max error = 4.5664e-08,  conv rate = 2.14419
+  h = 0.01:  Max error = 1.94686e-09,  conv rate = 4.55184
+  h = 0.005:  Max error = 9.20248e-11,  conv rate = 4.40298
+  h = 0.001:  Max error = 1.10523e-13,  conv rate = 4.17822
+  lambda = 200:
+  h = 0.1:  Max error = 6.22226e+276
+  h = 0.05:  Max error = 2.45413e-06,  conv rate = 938.126
+  h = 0.04:  Max error = 3.74246e-06,  conv rate = -1.89102
+  h = 0.03:  Max error = 1.98467e-07,  conv rate = 10.2088
+  h = 0.02:  Max error = 2.50497e-07,  conv rate = -0.574214
+  h = 0.01:  Max error = 1.10132e-08,  conv rate = 4.50749
+  h = 0.005:  Max error = 4.65322e-10,  conv rate = 4.56486
+  h = 0.001:  Max error = 4.48475e-13,  conv rate = 4.31494
+  lambda = 400:
+  h = 0.1:  Max error = 1.71565e+247
+  h = 0.05:  Max error = 1.02568e+236,  conv rate = 37.2834
+  h = 0.04:  Max error = 5.92568e+253,  conv rate = -183.281
+  h = 0.03:  Max error = 8.54026e+286,  conv rate = -265.4
+  h = 0.02:  Max error = 9.05898e-07,  conv rate = 1663.76
+  h = 0.01:  Max error = 6.15337e-08,  conv rate = 3.8799
+  h = 0.005:  Max error = 2.70323e-09,  conv rate = 4.50862
+  h = 0.001:  Max error = 2.02133e-12,  conv rate = 4.47265
+
+LSRK14:
+  lambda = 100:
+  h = 0.1:  Max error = 8.97454e-06
+  h = 0.05:  Max error = 1.52084e-06,  conv rate = 2.56097
+  h = 0.04:  Max error = 7.18438e-07,  conv rate = 3.36079
+  h = 0.03:  Max error = 9.53009e-08,  conv rate = 7.02178
+  h = 0.02:  Max error = 5.17629e-08,  conv rate = 1.50535
+  h = 0.01:  Max error = 3.14482e-09,  conv rate = 4.04087
+  h = 0.005:  Max error = 1.87909e-10,  conv rate = 4.06488
+  h = 0.001:  Max error = 2.85827e-13,  conv rate = 4.03142
+  lambda = 200:
+  h = 0.1:  Max error = 1.82582e+145
+  h = 0.05:  Max error = 2.10699e-06,  conv rate = 501.404
+  h = 0.04:  Max error = 1.33412e-06,  conv rate = 2.04798
+  h = 0.03:  Max error = 9.98907e-08,  conv rate = 9.00976
+  h = 0.02:  Max error = 1.75432e-07,  conv rate = -1.38895
+  h = 0.01:  Max error = 1.27312e-08,  conv rate = 3.78447
+  h = 0.005:  Max error = 7.75225e-10,  conv rate = 4.03761
+  h = 0.001:  Max error = 1.14403e-12,  conv rate = 4.05023
+  lambda = 400:
+  h = 0.1:  Max error = 2.6061e+271
+  h = 0.05:  Max error = 1.12696e+294,  conv rate = -75.1949
+  h = 0.04:  Max error = 2.11591e-06,  conv rate = 3092.83
+  h = 0.03:  Max error = 7.02761e-08,  conv rate = 11.8353
+  h = 0.02:  Max error = 3.2581e-07,  conv rate = -3.78302
+  h = 0.01:  Max error = 4.33441e-08,  conv rate = 2.91012
+  h = 0.005:  Max error = 3.15687e-09,  conv rate = 3.77927
+  h = 0.001:  Max error = 4.66199e-12,  conv rate = 4.0498
+
+ERK4:
+  lambda = 100:
+  h = 0.1:  Max error = 1.63572e+292
+  h = 0.05:  Max error = 1.04181e+292,  conv rate = 0.650829
+  h = 0.04:  Max error = 3.01756e+293,  conv rate = -15.0848
+  h = 0.03:  Max error = 3.57407e+79,  conv rate = 1712.25
+  h = 0.02:  Max error = 1.88314e-05,  conv rate = 478.606
+  h = 0.01:  Max error = 6.19953e-07,  conv rate = 4.92484
+  h = 0.005:  Max error = 3.0717e-08,  conv rate = 4.33505
+  h = 0.001:  Max error = 4.05544e-11,  conv rate = 4.1194
+  lambda = 200:
+  h = 0.1:  Max error = 3.0968e+295
+  h = 0.05:  Max error = 4.13071e+291,  conv rate = 12.8721
+  h = 0.04:  Max error = 1.97065e+302,  conv rate = -110.191
+  h = 0.03:  Max error = 1.79009e+288,  conv rate = 112.389
+  h = 0.02:  Max error = 2.55622e+275,  conv rate = 72.9467
+  h = 0.01:  Max error = 4.65265e-06,  conv rate = 932.598
+  h = 0.005:  Max error = 1.54131e-07,  conv rate = 4.91583
+  h = 0.001:  Max error = 1.69751e-10,  conv rate = 4.23205
+  lambda = 400:
+  h = 0.1:  Max error = 9.39002e+294
+  h = 0.05:  Max error = 7.81286e+294,  conv rate = 0.265277
+  h = 0.04:  Max error = 3.94098e+245,  conv rate = 508.691
+  h = 0.03:  Max error = 1.28891e+275,  conv rate = -236.233
+  h = 0.02:  Max error = 4.94801e+301,  conv rate = -150.968
+  h = 0.01:  Max error = 6.42224e+274,  conv rate = 89.3158
+  h = 0.005:  Max error = 1.15636e-06,  conv rate = 932.613
+  h = 0.001:  Max error = 7.45611e-10,  conv rate = 4.56469
+
+FE:
+  lambda = 100:
+  h = 0.1:  Max error = 3.44563e+187
+  h = 0.05:  Max error = 1.65571e+237,  conv rate = -165.039
+  h = 0.04:  Max error = 7.2471e+234,  conv rate = 24.3403
+  h = 0.03:  Max error = 1.86017e-05,  conv rate = 1917.66
+  h = 0.02:  Max error = 0.00010033,  conv rate = -4.15624
+  h = 0.01:  Max error = 1.85171e-05,  conv rate = 2.43783
+  h = 0.005:  Max error = 9.27419e-06,  conv rate = 0.997562
+  h = 0.001:  Max error = 1.85735e-06,  conv rate = 0.999159
+  lambda = 200:
+  h = 0.1:  Max error = 1.36891e+252
+  h = 0.05:  Max error = 2.81467e+301,  conv rate = -163.814
+  h = 0.04:  Max error = 6.03499e+291,  conv rate = 99.7704
+  h = 0.03:  Max error = 5.38277e+295,  conv rate = -31.6181
+  h = 0.02:  Max error = 6.71507e+305,  conv rate = -57.3342
+  h = 0.01:  Max error = 2.50415e-05,  conv rate = 1031.22
+  h = 0.005:  Max error = 4.61385e-06,  conv rate = 2.44028
+  h = 0.001:  Max error = 9.2401e-07,  conv rate = 0.999166
+  lambda = 400:
+  h = 0.1:  Max error = 2.43144e+298
+  h = 0.05:  Max error = 4.90452e+302,  conv rate = -14.3
+  h = 0.04:  Max error = 5.2129e+289,  conv rate = 133.872
+  h = 0.03:  Max error = 2.06733e+274,  conv rate = 123.274
+  h = 0.02:  Max error = 1.51509e+291,  conv rate = -95.7744
+  h = 0.01:  Max error = 2.34044e+281,  conv rate = 32.5919
+  h = 0.005:  Max error = 6.2552e-06,  conv rate = 951.975
+  h = 0.001:  Max error = 4.60848e-07,  conv rate = 1.6205
+(base) xinyang@MacBook-Pro Code % 
